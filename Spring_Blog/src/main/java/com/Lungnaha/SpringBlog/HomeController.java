@@ -1,4 +1,4 @@
-package com.Lungnaha.SpringBlog;
+ÀÚ¹Ù ¤Äpackage com.Lungnaha.SpringBlog;
 
 import java.text.DateFormat;
 import java.util.Date;
