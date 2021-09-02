@@ -1,5 +1,7 @@
 package com.Lungnaha.SpringBlog;
 
+
+
 // VO(Value Object) 클래스를 생성 -> 데이터를 한번에 주고 받을 목적으로 사용되는 클래스
 public class SpringBlogVO {
 	private int id;
@@ -30,6 +32,11 @@ public class SpringBlogVO {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	
+	@Override
+	public String toString() {
+		return "SpringBlogVO [id = " + id + "title=" + title + "writer=" + writer + "content=" + content + "]";
 	}
 
 }
