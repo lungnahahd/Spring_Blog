@@ -20,6 +20,7 @@ public class SpringBlogClient {
 		vo.setTitle("테스트제목");
 		vo.setWriter("렁나하");
 		vo.setContent("렁나하의 테스트 글....................");
+		//blogService.insertBlog(vo);
 		
 		// 4. 글 목록 조회 기능 테스트
 		List<SpringBlogVO> blogList = blogService.getList(vo);

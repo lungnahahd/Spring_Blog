@@ -36,7 +36,7 @@ public class SpringBlogVO {
 	
 	@Override
 	public String toString() {
-		return "SpringBlogVO [id = " + id + "title=" + title + "writer=" + writer + "content=" + content + "]";
+		return "SpringBlogVO [id =" + id + " title=" + title + " writer=" + writer + " content=" + content + "]";
 	}
 
 }
