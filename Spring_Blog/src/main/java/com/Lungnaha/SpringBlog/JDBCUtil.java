@@ -4,17 +4,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.sun.jdi.connect.spi.Connection;
+import java.sql.Connection;
 
 // MyBatis 사용 전에 데이터베이스 연동 처리를 JDBC로 하기 위해서 이용되는 클래스
 // 이를 통해 Connection 획득과 해제 작업을 공통으로 처리
 public class JDBCUtil {
-	public static void getConnection(){
+	public static Connection getConnection(){
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/database?serverTimezone=UTC","root","khd10810");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 	public static void close(PreparedStatement stmt, Connection conn) {
 		if (stmt != null) {
