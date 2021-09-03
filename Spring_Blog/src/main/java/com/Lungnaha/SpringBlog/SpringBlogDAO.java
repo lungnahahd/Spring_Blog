@@ -19,7 +19,7 @@ public class SpringBlogDAO  {
 	private ResultSet rs = null;
 	
 	// 처리할 SQL 명령어들 
-	private final String insertString = "insert into springblog(id, title, writer, content) values((select nvl(max(id),0)+1 from board),?,?,?)";
+	private final String insertString = "insert into springblog(title, writer, content) values(?,?,?)";
 	private final String updateString = "update springblog set title=?, content=? where id=? ";
 	private final String deleteString = "delete springblog where id=?";
 	private final String getString ="select * from springblog where id=?";
