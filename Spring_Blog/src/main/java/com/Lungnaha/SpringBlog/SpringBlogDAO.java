@@ -12,7 +12,7 @@ import java.sql.Connection;
 
 // VO 클래스를 이용해서 CRUD 기능을 수행할 저장소 역할을 하는 클래스
 @Repository("blogDAO")
-public class SpringBlogDAO {
+public class SpringBlogDAO  {
 	// JDBC 관련 변수
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
@@ -28,6 +28,7 @@ public class SpringBlogDAO {
 	// CRUD 기능을 수행하는 메소드 구현
 	
 	// 글 등록 메소드
+	@Override
 	public void insertBlog(SpringBlogVO vo) {
 		System.out.println("===>글 등록 시작");
 		try {
@@ -46,6 +47,7 @@ public class SpringBlogDAO {
 	}
 	
 	// 글 수정 기능 메소드
+	@Override
 	public void updateBlog(SpringBlogVO vo) {
 		System.out.println("=====> 글 수정 시작");
 		try {
@@ -63,6 +65,7 @@ public class SpringBlogDAO {
 	}
 	
 	// 글 삭젝 기능 메소드
+	@Override
 	public void deleteBlog(SpringBlogVO vo) {
 		System.out.println("=====> 글 삭제 시작");
 		try {
@@ -78,6 +81,7 @@ public class SpringBlogDAO {
 	}
 	
 	// 글 상세 조회 메소드
+	@Override
 	public SpringBlogVO getBlog(SpringBlogVO vo) {
 		System.out.println("=========>글 상세 조회 시작");
 		SpringBlogVO blog = null;
@@ -103,6 +107,7 @@ public class SpringBlogDAO {
 	}
 	
 	// 글 목록 조회 메소드
+	@Override
 	public List<SpringBlogVO> getList(SpringBlogVO vo){
 		System.out.println("=====>글 목록 조회 시작");
 		List<SpringBlogVO> blogList = new ArrayList<SpringBlogVO>();
