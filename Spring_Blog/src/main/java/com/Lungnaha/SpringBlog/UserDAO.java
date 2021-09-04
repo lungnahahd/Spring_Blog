@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 // 멤버 관리와 관련된 DAO 클래스
 // 여기서도 역시 JDBCUtil.java를 이용해서 기능 구현하기
-public class UserDAO {
+public class UserDAO  {
 	// JDBC에서 사용되는 변수들 선언
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
