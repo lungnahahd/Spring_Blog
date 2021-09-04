@@ -1,7 +1,12 @@
 package com.Lungnaha.SpringBlog;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("userService")
 public class UserService implements UserInterface {
 
+	@Autowired
 	private UserDAO userDAO;
 	
 	

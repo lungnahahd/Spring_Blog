@@ -4,8 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.springframework.stereotype.Repository;
+
 // 멤버 관리와 관련된 DAO 클래스
 // 여기서도 역시 JDBCUtil.java를 이용해서 기능 구현하기
+
+@Repository("userDAO")
 public class UserDAO  {
 	// JDBC에서 사용되는 변수들 선언
 	private Connection conn = null;
