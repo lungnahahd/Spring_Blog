@@ -17,8 +17,9 @@ public class UserDAO  {
 	private ResultSet rs = null;
 	
 	// 사용할 SQL문 작성
+	private final String insertString = "insert into springblog(title, writer, content) values(?,?,?)";
 	private final String userGet = "select * from springmember where id=? and password=?";
-	private final String userJoin = "insert into springmember(id, password, name, role) values(?,?,?,?)";
+	private final String userJoin = "insert into springmember(id, name, role, password) values(?,?,?,?)";
 	
 	//CRUD 기능의 메소드 구현
 	// 회원 등록
@@ -28,10 +29,10 @@ public class UserDAO  {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(userJoin);
 			stmt.setString(1, vo.getId());
-			stmt.setString(2, vo.getPassword());
-			stmt.setString(3, vo.getName());
-			stmt.setString(4, vo.getRole());
-			stmt.executeQuery();
+			stmt.setString(2, vo.getName());
+			stmt.setString(3, vo.getRole());
+			stmt.setString(4, vo.getPassword());
+			stmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
