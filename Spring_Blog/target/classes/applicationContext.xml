@@ -12,12 +12,13 @@
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
 	<!--DataSource 설정!!! 매우 중요-->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="dbc:mysql://localhost:3306/springprac?serverTimezone=Asia/Seoul"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="khd10810"></property>		
-	</bean>
+	<!--아래와 같이 바로 설정 가능하나 보안에는 취약할 수 있으니 조심  -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="db 드리아버"></property>
+		<property name="url" value="데이터베이스URL"></property>
+		<property name="username" value="유저이름"></property>
+		<property name="password" value="비밀번호"></property>		
+	</bean> -->
 	
 	<!-- Spring JDBC 설정 -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
